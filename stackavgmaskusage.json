@@ -8,7 +8,7 @@
     "transform": [
         {"calculate": "if(datum.MASK_FREQ === 'NEVER', 0, if(datum.MASK_FREQ === 'RARELY', 1,2))", "as": "mask_order"}
     ],
-    "mark": "bar",
+    "mark": {"type":"bar", "tooltip":true},
     "encoding": {
         "x": {
             "field": "STATE",
@@ -42,6 +42,7 @@
             "title": "Mask Usage By State"
         },
         "order": {"field": "mask_order"}
+        
     },
     "config": {}
 }

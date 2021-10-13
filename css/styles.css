@@ -1,14 +1,14 @@
 {
-    font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'PT Sans Narrow', sans-serif;;
   }
   h1{
     font-weight: 900;
   }
    body{
-     background-color: lightgray;
+     background-color: #d6fc90;
    }
    .page{
-     width: 850px;    
+     width: 1500px;    
      background-color: white;   
      margin: auto;
      padding: 50px;

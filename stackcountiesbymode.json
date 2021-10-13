@@ -3,8 +3,8 @@
     "data": {
         "url": "https://raw.githubusercontent.com/SamuelGE0006/FIT3179Vis2/main/maskdata.csv"
     },
-    "width":"container",
-    "height":"container",
+    "width":700,
+    "height":500,
     "mark": "bar",
     "encoding": {
         "x": {
