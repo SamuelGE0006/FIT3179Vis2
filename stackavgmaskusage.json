@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/SamuelGE0006/FIT3179Vis2/main/maskdatatransposed.csv"
+    },
+    "width":"container",
+    "height":"container",
+    "transform": [
+        {"calculate": "if(datum.MASK_FREQ === 'NEVER', 0, if(datum.MASK_FREQ === 'RARELY', 1,2))", "as": "mask_order"}
+    ],
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "STATE",
+            "type":"nominal"
+        },
+        "y": {
+            "aggregate":"average",
+            "field": "RESPONSE",
+            "stack":"normalize"
+        },
+        "color": {
+            "type": "nominal",
+            "field": "MASK_FREQ",
+            "scale": {
+                "domain": [
+                    "ALWAYS",
+                    "FREQUENTLY",
+                    "SOMETIMES",
+                    "RARELY",
+                    "NEVER"
+                ],
+                "range":[
+                    "#377eb8",
+                    "#4daf4a",
+                    "#984ea3",
+                    "#ff7f00",
+                    "#e41a1c"
+                ]
+            },
+        
+            "title": "Mask Usage By State"
+        },
+        "order": {"field": "mask_order"}
+    },
+    "config": {}
+}

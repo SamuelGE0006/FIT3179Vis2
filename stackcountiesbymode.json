@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/SamuelGE0006/FIT3179Vis2/main/maskdata.csv"
+    },
+    "width":"container",
+    "height":"container",
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "STATE",
+            "type":"nominal"
+        },
+        "y": {
+            "aggregate":"count",
+            "stack":"normalize"
+        },
+        "color": {
+            "type": "nominal",
+            "field": "MODE_USAGE",
+            "scale": {
+                "domain": [
+                    "ALWAYS",
+                    "FREQUENTLY",
+                    "SOMETIMES",
+                    "RARELY",
+                    "NEVER"
+                ],
+                "range":[
+                    "#377eb8",
+                    "#4daf4a",
+                    "#984ea3",
+                    "#ff7f00",
+                    "#e41a1c"
+                ]
+            },
+            "title": "Mask Usage By State"
+        }
+    },
+    "config": {}
+}
