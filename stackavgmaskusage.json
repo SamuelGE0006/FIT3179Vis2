@@ -3,8 +3,8 @@
     "data": {
         "url": "https://raw.githubusercontent.com/SamuelGE0006/FIT3179Vis2/main/maskdatatransposed.csv"
     },
-    "width":"container",
-    "height":"container",
+    "width":700,
+    "height":500,
     "transform": [
         {"calculate": "if(datum.MASK_FREQ === 'NEVER', 0, if(datum.MASK_FREQ === 'RARELY', 1,2))", "as": "mask_order"}
     ],
