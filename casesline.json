@@ -5,7 +5,7 @@
         "url": "https://raw.githubusercontent.com/SamuelGE0006/FIT3179Vis2/main/statecasesdeaths.csv"
     },
     "vconcat":[{
-    "width":"container",
+    "width":800,
 
     "mark": {"type": "line", "tooltip": true},
     "encoding": {
@@ -18,7 +18,7 @@
     }
 },
 {
-    "width":"container",
+    "width":800,
     "height":60,
     "mark":"line",
     "params": [{

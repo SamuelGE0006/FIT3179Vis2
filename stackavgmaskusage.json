@@ -1,5 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Reported Mask Usage By State",
     "data": {
         "url": "https://raw.githubusercontent.com/SamuelGE0006/FIT3179Vis2/main/maskdatatransposed.csv"
     },
@@ -12,12 +13,14 @@
     "encoding": {
         "x": {
             "field": "STATE",
-            "type":"nominal"
+            "type":"nominal",
+            "title": "State"
         },
         "y": {
             "aggregate":"average",
             "field": "RESPONSE",
-            "stack":"normalize"
+            "stack":"normalize",
+            "title": "Percentage of Response"
         },
         "color": {
             "type": "nominal",
@@ -39,7 +42,7 @@
                 ]
             },
         
-            "title": "Mask Usage By State"
+            "title": "Reported Mask Usage"
         },
         "order": {"field": "mask_order"}
         
