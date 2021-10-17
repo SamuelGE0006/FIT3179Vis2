@@ -1,0 +1,54 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Covid Cases by US State over Time",
+    "width": 800,
+    "height": 600,
+    "projection": {
+              "type": "albersUsa",
+              "center": [-120,50],
+               "scale": 1100},
+    "params": [
+    {
+      "name": "day_select",
+      "value": 57,
+      "bind": {"input": "range", "min": 57, "max": 189, "step": 1}
+      }
+  ],
+    "data": {
+      "url": "https://raw.githubusercontent.com/SamuelGE0006/FIT3179Vis2/main/lccases.csv"
+    },
+    "transform": [
+      {
+        "lookup": "state",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/SamuelGE0006/FIT3179Vis2/main/USstates.json",
+            "format": {"type": "topojson", "feature": "states"}
+          },
+          "key": "properties.name"
+        },
+        "as": "geo"
+      },
+      {"filter": "datum.days == day_select"}
+    ],
+    "mark": {"type": "geoshape"},
+    "encoding": {
+      "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+      "color": {
+          "field": "cbp", 
+          "type": "quantitative", 
+          "scale": {
+            "type": "log"
+                    },
+            "title":"Cases Per 10,000 residents"},
+     "tooltip": [
+                  {"field": "state", "type": "nominal", "title": "state"},
+                  {"field": "cbp", "type": "quantitative", "title":"Cases per 10,000 people", "format":".2f"}
+              ] 
+    },
+    
+    "config": {}
+  }
